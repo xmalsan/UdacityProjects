@@ -1,8 +1,10 @@
-import express from 'express';
+import  { Express, Request, Response } from 'express';
 import bodyParser from 'body-parser';
 import {filterImageFromURL, deleteLocalFiles} from './util/util';
 
 (async () => {
+
+  const express = require('express');
 
   // Init the Express application
   const app = express();
