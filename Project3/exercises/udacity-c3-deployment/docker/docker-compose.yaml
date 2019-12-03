@@ -1,0 +1,18 @@
+version: "3"
+services:
+  reverseproxy:
+      image: mallikas/reverseproxy
+      ports:
+          - 8080:8080
+      restart: always
+      depends_on:
+        - backend-user
+        - backend-feed     
+  backend-user:
+    image: mallikas/udacity-restapi-user
+  backend-feed:
+    image: mallikas/udacity-restapi-feed
+  frontend:
+    image: mallikas/udacity-frontend
+    ports:
+      - "8100:80"
